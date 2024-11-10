@@ -1,0 +1,5 @@
+# Built packages:
+*.zip
+
+./pkg/*
+!./pkg/.gitkeep
