@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "Fuck Off Wikipedia",
+    "description": "Removes Wikipedia donation notices and places a cookie as if you already donated.",
+    "version": "0.1.0",
+
+    "foreground": {
+        "scripts": [
+            "js/extension.js"
+        ]
+    },
+    "permissions": [
+        "https://*.wikipedia.org/*",
+        "http://*.wikipedia.org/*"
+    ]
+}
