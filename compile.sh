@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.0"
 ROOT=$(pwd)
 
 # Compile typescript:
@@ -8,7 +7,7 @@ tsc -p ./src || exit 10
 
 # Assemble package:
 # TIMESTAMP="$(date '+%Y-%m-%d_%H-%M-%S')"
-ARCHIVE_NAME="fuck-off-wikipedia_${VERSION}" # _${TIMESTAMP}"
+ARCHIVE_NAME="fuck-off-wikipedia" # _${TIMESTAMP}"
 
 function packExtension() {
     BROWSER="$1"
@@ -42,7 +41,7 @@ function packExtension() {
     zip -r ../../pkg/$PACKAGE_NAME ./* &> /dev/null || fatal "zipping archive"
 
     cd "$ROOT" || fatal "cd into $ROOT"
-    echo -e "SUCCESS"
+    echo -e "\tSUCCESS"
 }
 
 packExtension firefox

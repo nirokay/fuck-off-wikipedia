@@ -4,6 +4,13 @@
     "description": "Removes Wikipedia donation notices and places a cookie as if you already donated.",
     "version": "0.1.0",
 
+    "update_url": "https://github.com/nirokay/Snek/releases/latest/download/fuck-off-wikipedia.xpi",
+    "browser_specific_settings": {
+        "gecko": {
+            "update_url": "https://example.com/updates.json"
+        }
+    },
+
     "foreground": {
         "scripts": [
             "js/extension.js"
