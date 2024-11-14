@@ -16,11 +16,13 @@ let date = new Date;
 function removeBanner() {
     let element = document.getElementById(idDonationBanner);
     if (element == null) {
+        console.log("[Fuck-Off-Wikipedia] No banner found...");
         return;
     }
     // Try-catch, because another extension might beat me to the race:
     try {
         element.remove();
+        console.log("[Fuck-Off-Wikipedia] Removed donation banner!");
     }
     catch (error) {
         console.error([
@@ -73,7 +75,7 @@ function hasCookie() {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("[Fuck-Off-Wikipedia] Starting main()");
+        console.log("[Fuck-Off-Wikipedia] Starting tasks...");
         // Attempt removing banner in background:
         let promise = tryRemovingBannerOverTime();
         // Inject cookie in the meantime:
@@ -82,6 +84,9 @@ function main() {
         }
         // Sync up with background and exit:
         yield promise;
+        console.log("[Fuck-Off-Wikipedia] Finished execution, have a great day :3");
     });
 }
-main();
+document.onload = () => {
+    main();
+};

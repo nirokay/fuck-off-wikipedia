@@ -6,7 +6,7 @@
 
     "permissions": ["activeTab"],
     "content_scripts": [{
-        "js": ["js/extension.js"],
+        "js": ["js/worker.js"],
         "matches": [
             "https://*.wikipedia.org/*",
             "http://*.wikipedia.org/*"

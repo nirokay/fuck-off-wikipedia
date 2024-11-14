@@ -13,10 +13,14 @@ interface Dictionary<T> {
 
 function removeBanner() {
     let element: HTMLElement|null = document.getElementById(idDonationBanner);
-    if(element == null) {return}
+    if(element == null) {
+        console.log("[Fuck-Off-Wikipedia] No banner found...");
+        return;
+    }
     // Try-catch, because another extension might beat me to the race:
     try {
         element.remove();
+        console.log("[Fuck-Off-Wikipedia] Removed donation banner!");
     } catch(error) {
         console.error([
             "[Fuck-Off-Wikipedia] Located, but failed to remove, donation banner by id '" + idDonationBanner + "'",
@@ -69,7 +73,7 @@ function hasCookie(): boolean {
 }
 
 async function main() {
-    console.log("[Fuck-Off-Wikipedia] Starting main()");
+    console.log("[Fuck-Off-Wikipedia] Starting tasks...");
     // Attempt removing banner in background:
     let promise: Promise<void> = tryRemovingBannerOverTime();
 
@@ -80,6 +84,9 @@ async function main() {
 
     // Sync up with background and exit:
     await promise;
+    console.log("[Fuck-Off-Wikipedia] Finished execution, have a great day :3")
 }
 
-main();
+document.onload = () => {
+    main();
+}

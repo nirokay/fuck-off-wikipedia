@@ -6,7 +6,7 @@
 
     "foreground": {
         "scripts": [
-            "js/extension.js"
+            "js/worker.js"
         ]
     },
     "permissions": [
