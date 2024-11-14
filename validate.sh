@@ -6,7 +6,7 @@ function firefox-validate() {
 }
 
 [ ! -d "node_modules" ] || [ ! -f $PATH_BIN ] && {
-    echo -e "Please download the 'addons-validator' from npm: 'npm i addons-validator'"
+    echo -e "Please download the 'addons-validator' package from npm: 'npm i addons-validator'"
     exit 1
 }
 
